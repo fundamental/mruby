@@ -53,6 +53,10 @@ struct fmt_args {
 #define PAD_POS    (1U<<(' '-' '))
 #define MARK_POS   (1U<<('+'-' '))
 
+#ifndef LDBL_EPSILON
+#define LDBL_EPSILON 1e-16
+#endif
+
 static void
 out(struct fmt_args *f, const char *s, size_t l)
 {
